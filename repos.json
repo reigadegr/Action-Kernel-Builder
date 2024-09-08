@@ -1,9 +1,9 @@
 [  {
     "kernelSource": {
-      "name": "miku-KernelSU",
-      "repo": "https://github.com/PhamtomK12/kernel_xiaomi_odin",
-      "branch": "TDA",
-      "device": "odin"
+      "name": "myKernel",
+      "repo": "https://github.com/reigadegr/android_gki_kernel_5.10_common",
+      "branch": "android12-5.10-2024-08",
+      "device": "gki"
     },
     "withKernelSU": true,
     "toolchains": [
@@ -13,7 +13,7 @@
         "name": "gas"
       },
       {
-        "repo": "https://gitlab.com/ThankYouMario/android_prebuilts_clang-standalone/",
+        "repo": "https://github.com/crdroidandroid/android_prebuilts_clang_host_linux-x86_clang-r416183b/",
         "branch": "11",
         "name": "clang"
       }
