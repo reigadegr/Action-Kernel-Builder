@@ -50,14 +50,14 @@ jobs:
       - name: "⭐ Install prerequisites"
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential bc curl git zip ftp gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi libssl-dev lftp zstd wget libfl-dev python2 python3 libarchive-tools
+          sudo apt-get install -y build-essential bc curl git zip ftp gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi libssl-dev lftp zstd wget libfl-dev python2 python3 libarchive-tools repo
 
       - name: "💫 Get toolchains"
         run: |
-          ./repo init -u https://android.googlesource.com/kernel/manifest --depth 1
+          repo init -u https://android.googlesource.com/kernel/manifest --depth 1
           mv manifest_11737934.xml .repo/manifests
-          ./repo init -m manifest_11737934.xml
-          ./repo sync -j$(nproc --all) --no-tags --no-clone-bundle --force-sync
+          repo init -m manifest_11737934.xml
+          repo sync -j$(nproc --all) --no-tags --no-clone-bundle --force-sync
           rm -rf common          
           
       - name: "🌟 Clone kernel source => (${{ env.kernelRepo }})"
