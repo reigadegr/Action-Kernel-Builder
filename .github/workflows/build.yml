@@ -34,11 +34,10 @@ jobs:
       fail-fast: false
       matrix:
         repos: ${{ fromJSON(needs.Set-repos.outputs.repos) }}
-
-      kernelName: ${{ matrix.repos.kernelSource.name }}
-      kernelRepo: ${{ matrix.repos.kernelSource.repo }}
-      kernelBranch: ${{ matrix.repos.kernelSource.branch }}
-      kernelDevice: ${{ matrix.repos.kernelSource.device }}
+        kernelName: ${{ matrix.repos.kernelSource.name }}
+        kernelRepo: ${{ matrix.repos.kernelSource.repo }}
+        kernelBranch: ${{ matrix.repos.kernelSource.branch }}
+        kernelDevice: ${{ matrix.repos.kernelSource.device }}
 
       DEFCONFIG_NAME: ${{ matrix.repos.kernelSource.device }}_defconfig
 

@@ -34,7 +34,6 @@ jobs:
       fail-fast: false
       matrix:
         repos: ${{ fromJSON(needs.Set-repos.outputs.repos) }}
-
       kernelName: ${{ matrix.repos.kernelSource.name }}
       kernelRepo: ${{ matrix.repos.kernelSource.repo }}
       kernelBranch: ${{ matrix.repos.kernelSource.branch }}
@@ -62,7 +61,6 @@ jobs:
           git clone --recursive --branch $kernelBranch $kernelRepo $kernelName --depth=1
           mv $kernelName common                   
           
-
       - name: "😋 Update KernelSU"
         if: ${{ env.withKernelSU == 'true' }}
         run: |
