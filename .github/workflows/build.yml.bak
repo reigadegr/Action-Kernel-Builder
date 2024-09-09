@@ -62,6 +62,7 @@ jobs:
           git clone --recursive --branch $kernelBranch $kernelRepo $kernelName --depth=1
           mv $kernelName common                   
           
+
       - name: "😋 Update KernelSU"
         if: ${{ env.withKernelSU == 'true' }}
         run: |
