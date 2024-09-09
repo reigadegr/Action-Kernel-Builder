@@ -1,8 +1,8 @@
 [  {
     "kernelSource": {
       "name": "myKernel",
-      "repo": "https://github.com/reigadegr/android12-5.10-lts",
-      "branch": "main",
+      "repo": "https://github.com/ExWhyZed9/android_kernel_gki_common_5.10",
+      "branch": "zenx-rebase",
       "device": "gki"
     },
     "withKernelSU": true,
