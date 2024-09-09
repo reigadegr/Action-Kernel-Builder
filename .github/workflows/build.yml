@@ -38,10 +38,9 @@ jobs:
         kernelRepo: ${{ matrix.repos.kernelSource.repo }}
         kernelBranch: ${{ matrix.repos.kernelSource.branch }}
         kernelDevice: ${{ matrix.repos.kernelSource.device }}
-
-      DEFCONFIG_NAME: ${{ matrix.repos.kernelSource.device }}_defconfig
-
-      withKernelSU: ${{ matrix.repos.withKernelSU }}
+        DEFCONFIG_NAME: ${{ matrix.repos.kernelSource.device }}_defconfig
+        withKernelSU: ${{ matrix.repos.withKernelSU }}
+        
     steps:
       - name: "⭐ Install prerequisites"
         run: |
