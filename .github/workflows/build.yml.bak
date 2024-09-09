@@ -59,10 +59,6 @@ jobs:
           repo init -u https://android.googlesource.com/kernel/manifest --depth 1
           ls -al $(find  ../  -name manifest_11737934.xml)
           ls -al $(realpath $(find  ../  -name manifest_11737934.xml))
-          shutdown 
-          poweroff 
-          reboot
-          exit
           mv manifest_11737934.xml .repo/manifests
           repo init -m manifest_11737934.xml
           repo sync -j$(nproc --all) --no-tags --no-clone-bundle --force-sync
