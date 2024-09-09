@@ -40,6 +40,7 @@ jobs:
         kernelDevice: ${{ matrix.repos.kernelSource.device }}
         DEFCONFIG_NAME: ${{ matrix.repos.kernelSource.device }}_defconfig
         withKernelSU: ${{ matrix.repos.withKernelSU }}
+        
     steps:
       - name: "⭐ Install prerequisites"
         run: |
