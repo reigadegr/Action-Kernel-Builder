@@ -66,12 +66,14 @@ jobs:
           
       - name: "🌟 Clone kernel source => (${{ env.kernelRepo }})"
         run: |
+          cd Android-Kernel-Builder
           git clone --recursive --branch $kernelBranch $kernelRepo $kernelName --depth=1
           mv $kernelName common                   
           
       - name: "😋 Update KernelSU"
         if: ${{ env.withKernelSU == 'true' }}
         run: |
+          cd Android-Kernel-Builder
           rm -rf "./KernelSU" 2>/dev/null
           rm -rf "./drivers/kernelsu" 2>/dev/null
           if [ ! -d "./drivers/staging/kernelsu" ]; then
@@ -83,7 +85,9 @@ jobs:
           args: ${{ steps.generate-args.outputs.args }}
         run: |
           echo "PATH Variable: $PATH"
+          cd Android-Kernel-Builder
           LTO=thin BUILD_CONFIG=common/build.config.gki.aarch64 build/build.sh
+          
 
       - name: "🥰 Pack artifacts"
         uses: actions/upload-artifact@v4

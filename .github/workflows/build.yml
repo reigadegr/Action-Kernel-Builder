@@ -87,10 +87,11 @@ jobs:
           echo "PATH Variable: $PATH"
           cd Android-Kernel-Builder
           LTO=thin BUILD_CONFIG=common/build.config.gki.aarch64 build/build.sh
+          
 
       - name: "🥰 Pack artifacts"
         uses: actions/upload-artifact@v4
         with:
           name: Kernel
           compression-level: 9
-          path: out/dist
+          path: Android-Kernel-Builder/out/dist
