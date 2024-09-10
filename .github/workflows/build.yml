@@ -50,7 +50,7 @@ jobs:
       - name: "⭐ Install prerequisites"
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential bc curl git zip ftp gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi libssl-dev lftp zstd wget libfl-dev python2 python3 libarchive-tools repo
+          sudo apt-get install -y build-essential bc curl git zip ftp gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi libssl-dev lftp zstd wget libfl-dev python2 python3 libarchive-tools repo gzip
 
       - name: "💫 Get toolchains"
         run: |
@@ -85,7 +85,11 @@ jobs:
         run: |
           echo "PATH Variable: $PATH"
           cd Android-Kernel-Builder
-          LTO=thin BUILD_CONFIG=common/build.config.gki.aarch64 build/build.sh
+          mkdir -p out/dist
+          LTO=thin BUILD_CONFIG=common/build.config.gki.aarch64 build/build.sh | tee out/dist/build_log.txt
+          cd out/dist
+          rm -f ./vmlinux 
+          gzip ./Image
           
 
       - name: "🥰 Pack artifacts"
