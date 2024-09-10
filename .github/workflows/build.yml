@@ -95,6 +95,6 @@ jobs:
       - name: "🥰 Pack artifacts"
         uses: actions/upload-artifact@v4
         with:
-          name: Kernel
+          name: ${{ env.kernelName }}
           compression-level: 9
           path: Android-Kernel-Builder/out/dist
