@@ -61,14 +61,15 @@ jobs:
           # mv manifest_11737934.xml .repo/manifests
           # repo init -m manifest_11737934.xml
           repo sync -j$(nproc --all) --no-tags --no-clone-bundle --force-sync
-          rm -rf common
+          rm -rf common .repo
           sed -i 's/return ${RES}/return 0/g' build/_setup_env.sh
           
       - name: "🌟 Clone kernel source => (${{ env.kernelRepo }})"
         run: |
           cd Android-Kernel-Builder
           git clone --recursive --branch $kernelBranch $kernelRepo $kernelName --depth=1
-          mv $kernelName common                   
+          mv $kernelName common
+          rm -rf common/.git
           
       - name: "😋 Update KernelSU"
         if: ${{ env.withKernelSU == 'true' }}
