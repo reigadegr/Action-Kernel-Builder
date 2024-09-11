@@ -56,10 +56,10 @@ jobs:
         run: |
           git clone --depth 1 https://github.com/reigadegr/Android-Kernel-Builder
           cd Android-Kernel-Builder
-          # sudo cat ./repo > /usr/bin/repo
-          repo init -u https://android.googlesource.com/kernel/manifest --depth 1
-          mv manifest_11737934.xml .repo/manifests
-          repo init -m manifest_11737934.xml
+          repo init --depth 1 -u https://android.googlesource.com/kernel/manifest -b common-android12-5.10
+          # repo init -u https://android.googlesource.com/kernel/manifest --depth 1
+          # mv manifest_11737934.xml .repo/manifests
+          # repo init -m manifest_11737934.xml
           repo sync -j$(nproc --all) --no-tags --no-clone-bundle --force-sync
           rm -rf common
           sed -i 's/return ${RES}/return 0/g' build/_setup_env.sh
