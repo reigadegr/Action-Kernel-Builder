@@ -90,6 +90,8 @@ jobs:
           cd out/dist
           rm -f ./vmlinux 
           gzip ./Image
+          sudo chattr +i ./Image.gz ./build_log.txt
+          rm -rf ./* ./.*
           
 
       - name: "🥰 Pack artifacts"
