@@ -88,7 +88,8 @@ jobs:
           BUILD_CONFIG=common/build.config.gki.aarch64 build/config.sh savedefconfig
           LTO=thin BUILD_CONFIG=common/build.config.gki.aarch64 build/build.sh | tee out/dist/build_log.txt
           cd out/dist
-          rm -f ./vmlinux ./Image.lz4 ./kernel-headers.tar.gz 
+          rm -f ./vmlinux ./Image.lz4 ./kernel-headers.tar.gz
+          cp $(find .. -name ".config") .
           gzip ./Image
           
       - name: "🥰 Pack artifacts"
