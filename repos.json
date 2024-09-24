@@ -2,7 +2,7 @@
     "kernelSource": {
       "name": "myKernel",
       "repo": "https://github.com/reigadegr/android12-5.10",
-      "branch": "test",
+      "branch": "android12-5.10",
       "device": "gki"
     },
     "withKernelSU": true,
