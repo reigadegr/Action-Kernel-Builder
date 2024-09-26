@@ -1,6 +1,6 @@
 [  {
     "kernelSource": {
-      "name": "myKernel",
+      "name": "android12-5.10-gki",
       "repo": "https://github.com/reigadegr/android12-5.10",
       "branch": "android12-5.10",
       "device": "gki"
@@ -30,7 +30,7 @@
   },
     {
     "kernelSource": {
-      "name": "myKernel",
+      "name": "lineageOS-21",
       "repo": "https://github.com/reigadegr/android_kernel_xiaomi_mt6895",
       "branch": "lineage-21",
       "device": "gki"
