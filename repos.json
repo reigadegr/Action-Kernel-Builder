@@ -30,7 +30,7 @@
   },
     {
     "kernelSource": {
-      "name": "lineageOS-21",
+      "name": "lineageOS-21-mt6895",
       "repo": "https://github.com/reigadegr/android_kernel_xiaomi_mt6895",
       "branch": "lineage-21",
       "device": "gki"
