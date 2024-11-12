@@ -83,10 +83,10 @@ jobs:
         run: |
           echo "PATH Variable: $PATH"
           cd Android-Kernel-Builder
-          nohup rm -f ./vmlinux >/dev/null 2>&1 &
-          until [ -z $(pidof rm) ]; do
-            sleep 1
-          done
+          # nohup rm -f ./vmlinux >/dev/null 2>&1 &
+          # until [ -z $(pidof rm) ]; do
+          #   sleep 1
+          # done
           # cp $(find .. -name ".config") .
           tools/bazel run --config=fast --config=stamp --lto=thin //common:kernel_aarch64_dist -- --dist_dir=dist
       - name: "🥰 Pack artifacts"
