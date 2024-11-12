@@ -83,8 +83,6 @@ jobs:
         run: |
           echo "PATH Variable: $PATH"
           cd Android-Kernel-Builder
-          mkdir -p out/dist
-          cd out/dist
           nohup rm -f ./vmlinux >/dev/null 2>&1 &
           until [ -z $(pidof rm) ]; do
             sleep 1
