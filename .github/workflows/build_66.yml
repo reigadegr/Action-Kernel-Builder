@@ -89,7 +89,7 @@ jobs:
           until [ -z $(pidof rm) ]; do
             sleep 1
           done
-          cp $(find .. -name ".config") .
+          # cp $(find .. -name ".config") .
           tools/bazel run --config=fast --config=stamp --lto=thin //common:kernel_aarch64_dist -- --dist_dir=dist
       - name: "🥰 Pack artifacts"
         uses: actions/upload-artifact@v4
