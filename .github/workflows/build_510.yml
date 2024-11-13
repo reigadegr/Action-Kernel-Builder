@@ -1,7 +1,7 @@
 name: "Build kernels 5.10"
 
 env:
-  CONFIGURATION: "repos.json"
+  CONFIGURATION: "repos_android12-5.10.json"
   OUT_DIR: "out"
 
 on:

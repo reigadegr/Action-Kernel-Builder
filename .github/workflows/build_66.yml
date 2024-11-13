@@ -1,7 +1,7 @@
 name: "Build kernel 6.6"
 
 env:
-  CONFIGURATION: "repos.json"
+  CONFIGURATION: "repos_android15-6.6.json"
   OUT_DIR: "out"
 
 on:
