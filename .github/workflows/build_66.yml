@@ -75,6 +75,9 @@ jobs:
           rm -rf "./drivers/kernelsu" 2>/dev/null
           if [ ! -d "./drivers/staging/kernelsu" ]; then
             curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s main
+            git config --global user.email "bot@kernelsu.org"
+            git config --global user.name "KernelSUBot"
+            cd common/ && git add -A && git commit -a -m "Add KernelSU"
           fi
 
       - name: "🎶 Build kernel"
