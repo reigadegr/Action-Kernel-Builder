@@ -87,7 +87,7 @@ jobs:
           echo "PATH Variable: $PATH"
           cd Android-Kernel-Builder
           tools/bazel run --config=fast --config=stamp --lto=thin //common:kernel_aarch64_dist -- --dist_dir=dist
-          rm -f dist/vmlinux dist/*.gz dist/*.img
+          rm -f dist/vmlinux dist/*.gz
       - name: "🥰 Pack artifacts"
         uses: actions/upload-artifact@v4
         with:
