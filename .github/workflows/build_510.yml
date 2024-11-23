@@ -75,7 +75,7 @@ jobs:
           rm -rf "./KernelSU" 2>/dev/null
           rm -rf "./drivers/kernelsu" 2>/dev/null
           if [ ! -d "./drivers/staging/kernelsu" ]; then
-            curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s main
+            curl -LSs "https://raw.githubusercontent.com/5ec1cff/KernelSU/main/kernel/setup.sh" | bash -s main
           fi
 
       - name: "🎶 Build kernel"
