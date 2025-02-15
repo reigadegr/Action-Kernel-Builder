@@ -102,7 +102,7 @@ jobs:
           patch -p1 < mksu_susfs.patch
 
           # Change to common directory and apply SUSFS patch
-          cd ./common
+          cd  ../common
           patch -p1 < 50_add_susfs_in_gki-android12-5.10.patch || true
 
       - name: Apply Hide Stuff Patches😘
