@@ -6,28 +6,7 @@
             "branch": "lineage-21",
             "device": "gki"
         },
-        "withKernelSU": true,
-        "toolchains": [
-            {
-                "repo": "https://android.googlesource.com/platform/prebuilts/gas/linux-x86",
-                "branch": "master",
-                "name": "gas"
-            },
-            {
-                "repo": "https://github.com/crdroidandroid/android_prebuilts_clang_host_linux-x86_clang-r416183b/",
-                "branch": "11.0",
-                "name": "clang"
-            }
-        ],
-        "params": {
-            "ARCH": "arm64",
-            "CROSS_COMPILE": "aarch64-linux-gnu-",
-            "CROSS_COMPILE_ARM32": "arm-linux-gnueabi-",
-            "CROSS_COMPILE_COMPAT": "arm-linux-gnueabi-",
-            "CLANG_TRIPLE": "aarch64-linux-gnu-",
-            "AR": "",
-            "CC": "clang"
-        }
+        "withKernelSU": true
     },
     {
         "kernelSource": {
@@ -36,28 +15,7 @@
             "branch": "android12-5.10",
             "device": "gki"
         },
-        "withKernelSU": false,
-        "toolchains": [
-            {
-                "repo": "https://android.googlesource.com/platform/prebuilts/gas/linux-x86",
-                "branch": "master",
-                "name": "gas"
-            },
-            {
-                "repo": "https://github.com/crdroidandroid/android_prebuilts_clang_host_linux-x86_clang-r416183b/",
-                "branch": "11.0",
-                "name": "clang"
-            }
-        ],
-        "params": {
-            "ARCH": "arm64",
-            "CROSS_COMPILE": "aarch64-linux-gnu-",
-            "CROSS_COMPILE_ARM32": "arm-linux-gnueabi-",
-            "CROSS_COMPILE_COMPAT": "arm-linux-gnueabi-",
-            "CLANG_TRIPLE": "aarch64-linux-gnu-",
-            "AR": "",
-            "CC": "clang"
-        }
+        "withKernelSU": false
     },
     {
         "kernelSource": {
@@ -66,28 +24,7 @@
             "branch": "android12-5.10",
             "device": "gki"
         },
-        "withKernelSU": true,
-        "toolchains": [
-            {
-                "repo": "https://android.googlesource.com/platform/prebuilts/gas/linux-x86",
-                "branch": "master",
-                "name": "gas"
-            },
-            {
-                "repo": "https://github.com/crdroidandroid/android_prebuilts_clang_host_linux-x86_clang-r416183b/",
-                "branch": "11.0",
-                "name": "clang"
-            }
-        ],
-        "params": {
-            "ARCH": "arm64",
-            "CROSS_COMPILE": "aarch64-linux-gnu-",
-            "CROSS_COMPILE_ARM32": "arm-linux-gnueabi-",
-            "CROSS_COMPILE_COMPAT": "arm-linux-gnueabi-",
-            "CLANG_TRIPLE": "aarch64-linux-gnu-",
-            "AR": "",
-            "CC": "clang"
-        }
+        "withKernelSU": true
     },
     {
         "kernelSource": {
@@ -96,27 +33,6 @@
             "branch": "android12-5.10",
             "device": "gki"
         },
-        "withKernelSU": true,
-        "toolchains": [
-            {
-                "repo": "https://android.googlesource.com/platform/prebuilts/gas/linux-x86",
-                "branch": "master",
-                "name": "gas"
-            },
-            {
-                "repo": "https://github.com/crdroidandroid/android_prebuilts_clang_host_linux-x86_clang-r416183b/",
-                "branch": "11.0",
-                "name": "clang"
-            }
-        ],
-        "params": {
-            "ARCH": "arm64",
-            "CROSS_COMPILE": "aarch64-linux-gnu-",
-            "CROSS_COMPILE_ARM32": "arm-linux-gnueabi-",
-            "CROSS_COMPILE_COMPAT": "arm-linux-gnueabi-",
-            "CLANG_TRIPLE": "aarch64-linux-gnu-",
-            "AR": "",
-            "CC": "clang"
-        }
+        "withKernelSU": true
     }
 ]

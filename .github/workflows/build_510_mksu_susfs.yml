@@ -165,6 +165,12 @@ jobs:
           cd Android-Kernel-Builder
           mkdir -p out/dist
           BUILD_CONFIG=common/build.config.gki.aarch64 build/config.sh savedefconfig
+          
+          sed -i '$s|echo "\$res"|echo "\$res-Wild+"|' ./common/scripts/setlocalversion
+          # Run perl command to modify UTS_VERSION
+          perl -pi -e 's{UTS_VERSION="\$\(echo \$UTS_VERSION \$CONFIG_FLAGS \$TIMESTAMP \| cut -b -\$UTS_LEN\)"}{UTS_VERSION="#1 SMP PREEMPT Sat Apr 20 04:20:00 UTC 2024"}' ./common/scripts/mkcompile_h
+          sed -i 's/-dirty//' ./common/scripts/setlocalversion
+          
           LTO=thin BUILD_CONFIG=common/build.config.gki.aarch64 build/build.sh | tee out/dist/build_log.txt
           cd out/dist
           rm -f ./vmlinux ./Image.lz4 ./kernel-headers.tar.gz
