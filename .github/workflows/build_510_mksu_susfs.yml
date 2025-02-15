@@ -76,6 +76,8 @@ jobs:
           cd Android-Kernel-Builder
           rm -rf "./KernelSU" 2>/dev/null
           rm -rf "./drivers/kernelsu" 2>/dev/null
+          ls
+          pwd
           if [ ! -d "./drivers/staging/kernelsu" ]; then
             curl -LSs "https://raw.githubusercontent.com/5ec1cff/KernelSU/main/kernel/setup.sh" | bash -s main
           fi
@@ -109,7 +111,8 @@ jobs:
         run: |
           cd Android-Kernel-Builder          
           # Apply additional patch
-          cp ./kernel_patches/69_hide_stuff.patch ./
+          cp ./kernel_patches/69_hide_stuff.patch ./common
+          cd common
           patch -p1 -F 3 < 69_hide_stuff.patch
 
       - name: Add SUSFS Configuration Settings😛
