@@ -79,11 +79,11 @@ jobs:
           ls
           pwd
           if [ ! -d "./drivers/staging/kernelsu" ]; then
-            curl -LSs "https://raw.githubusercontent.com/5ec1cff/KernelSU/main/kernel/setup.sh" | bash -s main
+            curl -LSs "https://raw.githubusercontent.com/rifsxd/KernelSU-Next/next/kernel/setup.sh" | bash -s main
           fi
 
 
-      - name: Apply SUSFS Patches MKSU😇
+      - name: Apply SUSFS Patches KernelSU-Next😇
         run: |
           cd Android-Kernel-Builder
 
@@ -103,19 +103,19 @@ jobs:
           [  ! -d ./susfs4ksu/kernel_patches/include/linux ] && exit 1
           cp ./susfs4ksu/kernel_patches/include/linux/* ./common/include/linux/
 
-          cd ./KernelSU
-          # echo "Applying SUSFS patches..."
-          # patch -p1 --forward < 10_enable_susfs_for_ksu.patch || true
+          cd ./KernelSU-Next
+          echo "Applying next SUSFS patches..."
+          cp ../kernel_patches/KernelSU-Next-Implement-SUSFS-v1.5.5-Universal.patch ./
+          patch -p1 --forward < KernelSU-Next-Implement-SUSFS-v1.5.5-Universal.patch || true
           
-          echo "Applying mksu_susfs.patch"
-          cp ../kernel_patches/mksu_susfs.patch ../KernelSU/
-          patch -p1 < mksu_susfs.patch
 
           # Change to common directory and apply SUSFS patch
           cd  ../common
           patch -p1 < 50_add_susfs_in_gki-android12-5.10.patch || true
-          #################
-
+          
+          
+         
+          
       - name: Apply Hide Stuff Patches😘
         run: |
           cd Android-Kernel-Builder          
