@@ -1,4 +1,4 @@
-name: "Build kernels 5.10 with MKSU and susfs"
+name: "Build kernels 5.10 with KSU Next and susfs"
 
 env:
   CONFIGURATION: "repos_android12-5.10.json"
