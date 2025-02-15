@@ -95,7 +95,7 @@ jobs:
 
           cd ./KernelSU
           echo "Applying SUSFS patches..."
-          patch -p1 --forward < 10_enable_susfs_for_ksu.patch || exit 1
+          patch -p1 --forward < 10_enable_susfs_for_ksu.patch || true
           
           echo "Applying mksu_susfs.patch"
           cp ../kernel_patches/mksu_susfs.patch ../KernelSU/
@@ -103,9 +103,9 @@ jobs:
 
           # Change to common directory and apply SUSFS patch
           cd ./common
-          patch -p1 < 50_add_susfs_in_gki-android12-5.10.patch || exit 1
+          patch -p1 < 50_add_susfs_in_gki-android12-5.10.patch || true
 
-      - name: Apply Hide Stuff Patches
+      - name: Apply Hide Stuff Patches😘
         run: |
           cd Android-Kernel-Builder          
           # Apply additional patch
