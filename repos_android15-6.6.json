@@ -33,10 +33,10 @@
         "kernelSource": {
             "name": "android15-6.6-gki",
             "repo": "https://github.com/aosp-mirror/kernel_common",
-            "branch": "android15-6.6",
+            "branch": "android15-6.6-lts",
             "device": "gki"
         },
-        "withKernelSU": false,
+        "withKernelSU": true,
         "toolchains": [
             {
                 "repo": "https://android.googlesource.com/platform/prebuilts/gas/linux-x86",
