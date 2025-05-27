@@ -1,12 +1,12 @@
 [
     {
         "kernelSource": {
-            "name": "android12-5.10-lineage-21",
-            "repo": "https://github.com/reigadegr/android_kernel_xiaomi_mt6895",
-            "branch": "lineage-21",
+            "name": "android12-5.10-lineage-22.2",
+            "repo": "https://github.com/xiaomi-mediatek-devs/android_kernel_xiaomi_mt6895",
+            "branch": "lineage-22.2",
             "device": "gki"
         },
-        "withKernelSU": true,
+        "withKernelSU": false,
         "toolchains": [
             {
                 "repo": "https://android.googlesource.com/platform/prebuilts/gas/linux-x86",
